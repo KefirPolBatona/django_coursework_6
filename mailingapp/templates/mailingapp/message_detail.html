@@ -1,0 +1,62 @@
+{% extends 'mailingapp/base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+
+        <div class="col-6">
+            <div class="container-fluid">
+                <p class="card-text">
+                    <h5>Тема сообщения: {{ object.message_title }}</h5>
+                    <h5>Создано пользователем: {{ object.user }}</h5>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <li class="nav-item active" style="color: #ad916c">
+                        <a class="card-text" style="color: #ad916c" href="{% url 'mailingapp:message_update' object.pk %}">
+                            Изменить сообщение
+                        </a>
+                    </li>
+                    <li class="nav-item active" style="color: #ad916c">
+                        <a class="card-text" style="color: #ad916c" href="{% url 'mailingapp:message_delete' object.pk %}">
+                            Удалить сообщение
+                        </a>
+                    </li>
+                </p>
+            </div>
+        </div>
+
+        <div class="col-6">
+            <div class="container-fluid">
+                <p class="card-text">
+                    <h5>Сообщение: </h5>
+                </p>
+                <p class="card-text">
+                    <h7>{{ object.message_text }}</h7>
+                </p>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+</main>
+
+
+<script src="{% static 'js/jquery-3.2.1.slim.min.js' %}"></script>
+
+</body>
+
+</html>
+{% endblock %}

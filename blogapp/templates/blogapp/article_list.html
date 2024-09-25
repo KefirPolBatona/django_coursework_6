@@ -1,0 +1,47 @@
+{% extends 'mailingapp/base.html' %}
+
+{% load static %}
+
+{% load my_tags %}
+
+{% block content %}
+
+<div class="container">
+
+            <div class="row">
+                {% for object in object_list %}
+
+                <div class="col-md-4">
+                    <div class="card-body">
+                        <button type="button" class="btn">
+                            <a class="btn" href="{% url 'blogapp:article_detail' object.pk %}" role="button">
+                                <div class="card text-white">
+                                    <img src="{{ object.article_image | media_filter }}" class="img-thumbnail"
+                                         alt="{{ object.article_image }}">
+                                    <div class="card-img-overlay">
+                                        <h5 class="card-title">{{ object.article_name }}</h5>
+                                    </div>
+                                </div>
+                            </a>
+                        </button>
+                    </div>
+                    <br>
+                    <br>
+                </div>
+
+                {% endfor %}
+
+            </div>
+
+</div>
+
+
+</main>
+
+
+<script src="{% static 'js/jquery-3.2.1.slim.min.js' %}"></script>
+
+</body>
+
+</html>
+{% endblock %}

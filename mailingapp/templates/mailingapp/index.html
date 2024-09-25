@@ -1,0 +1,100 @@
+{% extends 'mailingapp/base.html' %}
+
+{% load static %}
+
+{% load my_tags %}
+
+{% block content %}
+
+<br>
+<br>
+<br>
+<div class="container">
+    <div class="row">
+
+        <div class="col-4">
+            <div class="card text-center" style="background-color: #c4c1c0">
+                <div class="card-header">
+                   <h5 class="card-title">
+                       {{ mailing_count }}
+                   </h5>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">
+                        Всего рассылок
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-4">
+            <div class="card text-center" style="background-color: #c4c1c0">
+                <div class="card-header">
+                   <h5 class="card-title">
+                       {{ mailing_active_count }}
+                   </h5>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">
+                        Активных рассылок
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-4">
+            <div class="card text-center" style="background-color: #c4c1c0">
+                <div class="card-header">
+                   <h5 class="card-title">
+                       {{ client_count }}
+                   </h5>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">
+                        Уникальных клиентов
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class="container">
+    <div class="row">
+
+        {% for object in article_order_list %}
+            <div class="col-4">
+                <div class="card-body">
+                    <button type="button" class="btn">
+                        <a class="btn" href="{% url 'blogapp:article_detail' object.pk %}" role="button">
+                            <div class="card text-white">
+                                <img src="{{ object.article_image | media_filter }}" class="img-thumbnail"
+                                     alt="{{ object.article_image }}">
+                                <div class="card-img-overlay">
+                                    <h5 class="card-title">{{ object.article_name }}</h5>
+                                </div>
+                            </div>
+                        </a>
+                    </button>
+                </div>
+            </div>
+        {% endfor %}
+
+    </div>
+</div>
+
+</main>
+
+
+<script src="{% static 'js/jquery-3.2.1.slim.min.js' %}"></script>
+
+</body>
+
+</html>
+{% endblock %}

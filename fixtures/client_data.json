@@ -1,0 +1,170 @@
+[
+{
+    "model": "mailingapp.client",
+    "pk": 1,
+    "fields": {
+        "email_client": "9232485@mail.ru",
+        "first_name": "Евгений",
+        "last_name": "Семёнов",
+        "middle_name": "Иванович",
+        "comment_client": "Тест - 222",
+        "user": 2
+    }
+},
+{
+    "model": "mailingapp.client",
+    "pk": 2,
+    "fields": {
+        "email_client": "test@mail.ru",
+        "first_name": "Ирина",
+        "last_name": "Овчиенко",
+        "middle_name": "Тестовна",
+        "comment_client": "Тест 2",
+        "user": 1
+    }
+},
+{
+    "model": "mailingapp.client",
+    "pk": 3,
+    "fields": {
+        "email_client": "test1@mail.ru",
+        "first_name": "Наталья",
+        "last_name": "Иванова",
+        "middle_name": "Леонидовна",
+        "comment_client": "Тест - текст: Файлы crontab пользователей именуются в соответствии с именем пользователя, и их расположение зависит от операционной системы. В дистрибутивах на основе Red Hat, таких как CentOS, файлы crontab хранятся в каталоге /var/spool/cron, а файлы Debian и Ubuntu хранятся в каталоге /var/spool/cron/crontabs.\r\n\r\nХотя вы можете редактировать пользовательские файлы crontab вручную, рекомендуется использовать команду crontab.\r\n\r\n/etc/crontab и файлы в каталоге /etc/cron.d являются общесистемными файлами crontab, которые могут редактировать только системные администраторы.\r\n\r\nВ большинстве дистрибутивов Linux вы также можете помещать скрипты в каталоги /etc/cron.{hourly,daily,weekly,monthly}, и скрипты будут выполняться каждый час/день/неделю/месяц.",
+        "user": 2
+    }
+},
+{
+    "model": "mailingapp.client",
+    "pk": 5,
+    "fields": {
+        "email_client": "test3@mail.ru",
+        "first_name": "Тест",
+        "last_name": "Тестов",
+        "middle_name": "Тестович",
+        "comment_client": "Текст - Тест",
+        "user": 2
+    }
+},
+{
+    "model": "mailingapp.client",
+    "pk": 6,
+    "fields": {
+        "email_client": "test4@mail.ru",
+        "first_name": "Ирина",
+        "last_name": "Петрова",
+        "middle_name": "Тестовна",
+        "comment_client": "Тест текст",
+        "user": 1
+    }
+},
+{
+    "model": "mailingapp.client",
+    "pk": 7,
+    "fields": {
+        "email_client": "test5@mail.ru",
+        "first_name": "Наталья",
+        "last_name": "Иванова",
+        "middle_name": "Леонидовна",
+        "comment_client": "Тест Тест Ттест",
+        "user": 2
+    }
+},
+{
+    "model": "mailingapp.client",
+    "pk": 8,
+    "fields": {
+        "email_client": "test6@mail.ru",
+        "first_name": "Семён",
+        "last_name": "Овчиенко",
+        "middle_name": "Тестович",
+        "comment_client": "Тест Текст",
+        "user": 3
+    }
+},
+{
+    "model": "mailingapp.client",
+    "pk": 9,
+    "fields": {
+        "email_client": "test7@mail.ru",
+        "first_name": "Александр",
+        "last_name": "Сидоров",
+        "middle_name": "Александрович",
+        "comment_client": "Текст новый тест",
+        "user": 4
+    }
+},
+{
+    "model": "mailingapp.client",
+    "pk": 10,
+    "fields": {
+        "email_client": "9232485@gmail.com",
+        "first_name": "Наталья",
+        "last_name": "Семёнова",
+        "middle_name": "Богдановна",
+        "comment_client": "Текст тест",
+        "user": 1
+    }
+},
+{
+    "model": "mailingapp.client",
+    "pk": 11,
+    "fields": {
+        "email_client": "zslugin@yandex.ru",
+        "first_name": "Ирина",
+        "last_name": "Качатурян",
+        "middle_name": "Эрековна",
+        "comment_client": "",
+        "user": 1
+    }
+},
+{
+    "model": "mailingapp.client",
+    "pk": 12,
+    "fields": {
+        "email_client": "rgd22@yandex.ru",
+        "first_name": "Андрей",
+        "last_name": "Коленков",
+        "middle_name": "Сергеевич",
+        "comment_client": "Тест Текст",
+        "user": 1
+    }
+},
+{
+    "model": "mailingapp.client",
+    "pk": 13,
+    "fields": {
+        "email_client": "test@yandex.ru",
+        "first_name": "Елена",
+        "last_name": "Кудрявцева",
+        "middle_name": "Анатольевна",
+        "comment_client": "Текст Тест",
+        "user": 1
+    }
+},
+{
+    "model": "mailingapp.client",
+    "pk": 14,
+    "fields": {
+        "email_client": "test@gmail.com",
+        "first_name": "Nicol",
+        "last_name": "Kidman",
+        "middle_name": null,
+        "comment_client": "Актриса",
+        "user": 1
+    }
+},
+{
+    "model": "mailingapp.client",
+    "pk": 15,
+    "fields": {
+        "email_client": "test5@njfnmv.ru",
+        "first_name": "email",
+        "last_name": "ошибочный",
+        "middle_name": null,
+        "comment_client": "Ошибка в email",
+        "user": 1
+    }
+}
+]

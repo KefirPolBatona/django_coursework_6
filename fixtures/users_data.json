@@ -1,0 +1,88 @@
+[
+{
+    "model": "usersapp.user",
+    "pk": 1,
+    "fields": {
+        "password": "pbkdf2_sha256$600000$OGOb1I3L6HlWKaPGOG4x3s$eQe6Ilk1p5Duz7jRrY5Wh72hYHSfq143U8JVQsgHDGU=",
+        "last_login": "2024-09-22T10:09:49.079Z",
+        "is_superuser": true,
+        "first_name": "Admin",
+        "last_name": "Adminka",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2024-09-16T15:37:49.380Z",
+        "email": "9232485@gmail.com",
+        "phone": null,
+        "token": null,
+        "is_block": false,
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "usersapp.user",
+    "pk": 2,
+    "fields": {
+        "password": "pbkdf2_sha256$600000$e7rYnSaafRw4z50nCRbXfR$X97AFBRR48HEdjlAv0hNWIHQbkUllR57wu4sYnxtN60=",
+        "last_login": "2024-09-22T10:07:56.213Z",
+        "is_superuser": false,
+        "first_name": "Евгений",
+        "last_name": "Семёнов",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2024-09-16T17:30:30Z",
+        "email": "zslugin@yandex.ru",
+        "phone": "89731986491",
+        "token": "fb1aeaf15e5898a99ec94ce9c75b11f9",
+        "is_block": false,
+        "groups": [
+            1
+        ],
+        "user_permissions": []
+    }
+},
+{
+    "model": "usersapp.user",
+    "pk": 3,
+    "fields": {
+        "password": "pbkdf2_sha256$600000$7ZmVqAIvIUaQcuPihvGxY9$JAZwo4/kdKEGPPR0v8mbIkOSQ+b12HkQoLVciLsRpRQ=",
+        "last_login": "2024-09-22T10:10:30.017Z",
+        "is_superuser": false,
+        "first_name": "Иван",
+        "last_name": "Петров",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2024-09-20T07:32:35Z",
+        "email": "9232485@mail.ru",
+        "phone": "+79112222222",
+        "token": "94374a9b9cf0690f5d8da7182e0af3b1",
+        "is_block": false,
+        "groups": [
+            3
+        ],
+        "user_permissions": []
+    }
+},
+{
+    "model": "usersapp.user",
+    "pk": 4,
+    "fields": {
+        "password": "pbkdf2_sha256$600000$nJRXKcH8VtoTu3VkZ6GkEM$1pOqkgpaVVXoM8H3G6jfkX3PcISKk41BkVn9uPeMCRg=",
+        "last_login": "2024-09-22T10:07:13.571Z",
+        "is_superuser": false,
+        "first_name": "Наталья",
+        "last_name": "Савушкина",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2024-09-20T11:17:34Z",
+        "email": "rgd22@yandex.ru",
+        "phone": "89111111111",
+        "token": "4b78e28c2c9e605b2619778b35f065a9",
+        "is_block": true,
+        "groups": [
+            2
+        ],
+        "user_permissions": []
+    }
+}
+]

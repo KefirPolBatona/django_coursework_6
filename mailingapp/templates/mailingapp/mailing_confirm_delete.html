@@ -1,0 +1,48 @@
+{% extends 'mailingapp/base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<form class="row" method="post" enctype="multipart/form-data">
+
+    <div class="col-2"></div>
+
+    <div class="col-4 mb-5">
+        <div class="container">
+            <div class="card" style="background-color: #a6a190">
+
+                <div class="card-header">
+                    <h4 class="card-title">
+                        Удалить рассылку
+                    </h4>
+                    <h5 class="card-title">
+                        {{ object }}
+                    </h5>
+                </div>
+
+                <div class="card-body mb-5">
+                <form method="post">
+                    {% csrf_token %}
+
+                    <button type="submit" class="btn btn-secondary">Удалить</button>
+                    <a href="{% url 'mailingapp:mailing_detail' object.pk %}" class="btn btn-secondary">Отмена</a>
+                </form>
+            </div>
+
+            </div>
+            <br>
+        </div>
+    </div>
+
+</form>
+
+
+</main>
+
+<script src="{% static 'js/jquery-3.2.1.slim.min.js' %}"></script>
+
+</body>
+
+</html>
+{% endblock %}

@@ -1,0 +1,120 @@
+{% extends 'mailingapp/base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+
+    <div class="row mb-5">
+
+        <div class="col-2">
+            <div class="container-fluid">
+                <p class="card-text">
+                    <h5>Рассылка № {{ object.pk }}</h5>
+                    <h6>Создана: {{ object.created_at }}</h6>
+                    <h6>Создано пользователем: {{ object.user }}</h6>
+                    <h6>Старт: {{ object.start_mailing }}</h6>
+                    <h6>Окончание: {{ object.end_mailing }}</h6>
+                    <h6>Периодичность: {{ object.periodic_mailing }}</h6>
+                    <h6>Статус: {{ object.status_mailing }}</h6>
+
+
+                    {% if object.is_disabled == True %}
+                        <h6 style="color: #db220d"> Рассылка отключена менеджером: </h6>
+
+                        {% if perms.mailingapp.сan_disabled_mailings or user.is_superuser %}
+                            <li class="nav-item active" style="color: #ad916c">
+                                <a class="card-text" style="color: #ad916c"
+                                   href="{% url 'mailingapp:mailing_disabled' object.pk %}">
+                                    Включить рассылку
+                                </a>
+                            </li>
+                        {% endif %}
+
+                    {% else %}
+
+                        {% if perms.mailingapp.сan_disabled_mailings or user.is_superuser %}
+                            <li class="nav-item active" style="color: #ad916c">
+                                <a class="card-text" style="color: #ad916c"
+                                   href="{% url 'mailingapp:mailing_disabled' object.pk %}">
+                                    Отключить рассылку
+                                </a>
+                            </li>
+                        {% endif %}
+
+                    {% endif %}
+
+                    {% if not perms.mailingapp.сan_disabled_mailings or user.is_superuser %}
+                        <li class="nav-item active" style="color: #ad916c">
+                            <a class="card-text" style="color: #ad916c" href="{% url 'mailingapp:mailing_update' object.pk %}">
+                                Изменить рассылку
+                            </a>
+                        </li>
+                        <li class="nav-item active" style="color: #ad916c">
+                            <a class="card-text" style="color: #ad916c" href="{% url 'mailingapp:mailing_delete' object.pk %}">
+                                Удалить рассылку
+                            </a>
+                        </li>
+                    {% endif %}
+
+                </p>
+            </div>
+        </div>
+
+        <div class="col-4">
+            <div class="container-fluid">
+                <p class="card-text">
+                    <h5>Сообщение рассылки</h5>
+                </p>
+                <p class="card-text">
+                    <h6>Тема: {{ object.message.message_title }}</h6>
+                </p>
+                <p class="card-text">
+                    <h7>{{ object.message.message_text }}</h7>
+                </p>
+            </div>
+        </div>
+
+        <div class="col-3">
+            <div class="container-fluid">
+                <p class="card-text">
+                    <h5>Клиенты-получатели:</h5>
+                </p>
+                <p class="card-text">
+                    {% for client in object.clients.all %}
+                        <h6>{{ client }}</h6>
+                    {% endfor %}
+                </p>
+            </div>
+        </div>
+
+        <div class="col-3">
+            <div class="container-fluid">
+                <p class="card-text">
+                    <h5>Попытки рассылки:</h5>
+                </p>
+                <p class="card-text">
+                    {% for attempt in object.attempt_set.all %}
+                        <a class="btn" href="{% url 'mailingapp:attempt_detail' attempt.pk %}" role="button">
+                            <h6 >{{ attempt.last_attempt }}</h6>
+                            <h6 >{{ attempt.status_attempt }}</h6>
+                        </a>
+                        <hr>
+                    {% endfor %}
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+
+
+</main>
+
+
+<script src="{% static 'js/jquery-3.2.1.slim.min.js' %}"></script>
+
+</body>
+
+</html>
+{% endblock %}

@@ -1,0 +1,59 @@
+{% extends 'mailingapp/base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+
+        <div class="col-6">
+            <div class="container-fluid">
+                <p class="card-text">
+                    <h5>Клиент: {{ object.last_name }} {{ object.first_name }} {{ object.middle_name }}</h5>
+                    <h5>электронный адрес: {{ object.email_client }}</h5>
+                    <h5>создано пользователем: {{ object.user }}</h5>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <li class="nav-item active" style="color: #ad916c">
+                        <a class="card-text" style="color: #ad916c" href="{% url 'mailingapp:client_update' object.pk %}">
+                            Изменить сведения о клиенте
+                        </a>
+                    </li>
+                    <li class="nav-item active" style="color: #ad916c">
+                        <a class="card-text" style="color: #ad916c" href="{% url 'mailingapp:client_delete' object.pk %}">
+                            Удалить клиента
+                        </a>
+                    </li>
+                </p>
+            </div>
+        </div>
+
+        <div class="col-6">
+            <div class="container-fluid">
+                <p class="card-text">
+                    <h5>Комментарий: </h5>
+                    <h6>{{ object.comment_client }}</h6>
+                </p>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+</main>
+
+
+<script src="{% static 'js/jquery-3.2.1.slim.min.js' %}"></script>
+
+</body>
+
+</html>
+{% endblock %}

@@ -1,0 +1,39 @@
+{% extends 'mailingapp/base.html' %}
+
+{% load static %}
+
+{% load my_tags %}
+
+{% block content %}
+<div class="card-body" style="background-color: #f2ddda">
+
+    <div class="container-fluid"></div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <img src="{{ object.article_image | media_filter}}" class="img-thumbnail"
+                     alt="{{ object.article_image }}">
+            </div>
+            <div class="col-md-6">
+                <h5 class="card-title text-secondary">{{ object.article_name }}</h5>
+                <p class="card-text text-secondary">{{ object.article_content }}</p>
+                <p class="card-text text-secondary"><small>Создано {{ object.created_at }} Просмотров: {{ object.views_count }}</small></p>
+            </div>
+        </div>
+        <br>
+        <br>
+        <br>
+    </div>
+</div>
+
+
+</main>
+
+
+<script src="{% static 'js/jquery-3.2.1.slim.min.js' %}"></script>
+
+</body>
+
+</html>
+{% endblock %}

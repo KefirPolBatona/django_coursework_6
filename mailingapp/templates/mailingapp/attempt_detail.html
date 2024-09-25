@@ -1,0 +1,40 @@
+{% extends 'mailingapp/base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+
+        <div class="col-6">
+            <div class="container-fluid">
+                <p class="card-text">
+                    <h5>Попытка: {{ object.pk }}</h5>
+                    <h6>Дата и время последней отправки: {{ object.last_attempt }}</h6>
+                    <h6>Статус: {{ object.status_attempt }}</h6>
+
+                    {% if object.answer_mail_server %}
+                        <h6>Ответы об ошибках: {{ object.answer_mail_server }}</h6>
+                    {% endif %}
+
+                    <h6>{{ object.mailing }}</h6>
+                </p>
+            </div>
+        </div>
+
+        <div class="col-6"></div>
+
+    </div>
+</div>
+
+
+</main>
+
+
+<script src="{% static 'js/jquery-3.2.1.slim.min.js' %}"></script>
+
+</body>
+
+</html>
+{% endblock %}

@@ -1,0 +1,74 @@
+{% extends 'mailingapp/base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="container">
+    <div class="container-fluid">
+
+        <p class="card-text">
+            <h5> Административные пользователи сервиса: </h5>
+        </p>
+
+    </div>
+
+    <div class="container-fluid">
+        {% for object in object_list %}
+            <p class="card-text">
+
+                <h6> Имя: {{ object.first_name }} </h6>
+                <h6> Фамилия: {{ object.last_name }} </h6>
+                <h6> тел.: {{ object.phone }} </h6>
+                <h6> email: {{ object.email }} </h6>
+
+                {% if object.is_block == True %}
+                    <h6 style="color: #db220d"> Пользователь заблокирован </h6>
+
+                    {% if perms.usersapp.сan_block_user or user.is_superuser %}
+                        <li class="nav-item active" style="color: #ad916c">
+                            <a class="card-text" style="color: #ad916c"
+                               href="{% url 'usersapp:user_blocked' object.pk %}">
+                                Разблокировать пользователя
+                            </a>
+                        </li>
+                    {% endif %}
+
+                {% else %}
+
+                    {% if perms.usersapp.сan_block_user or user.is_superuser %}
+                        <li class="nav-item active" style="color: #ad916c">
+                            <a class="card-text" style="color: #ad916c"
+                               href="{% url 'usersapp:user_blocked' object.pk %}">
+                                Заблокировать пользователя
+                            </a>
+                        </li>
+                    {% endif %}
+
+                {% endif %}
+
+                {% if perms.usersapp.delete_user or user.is_superuser %}
+                    <li class="nav-item active" style="color: #ad916c">
+                        <a class="card-text" style="color: #ad916c"
+                           href="{% url 'usersapp:user_delete' object.pk %}">
+                            Удалить пользователя
+                        </a>
+                    </li>
+                {% endif %}
+                <br>
+
+            </p>
+        {% endfor %}
+
+    </div>
+ </div>
+
+</main>
+
+
+<script src="{% static 'js/jquery-3.2.1.slim.min.js' %}"></script>
+
+</body>
+
+</html>
+{% endblock %}

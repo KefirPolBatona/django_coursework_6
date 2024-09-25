@@ -1,0 +1,61 @@
+<div class="collapse navbar-collapse" id="navbarsExampleDefault">
+    <ul class="navbar-nav mr-auto">
+
+        <li class="nav-item active">
+            <a class="nav-link" href="{% url 'mailingapp:index' %}">Главная</a>
+        </li>
+        <li class="nav-item active">
+            <a class="nav-link" href="{% url 'blogapp:article_list' %}">Блог</a>
+        </li>
+
+        {% if user.is_authenticated %}
+
+            {% if user.is_block == False %}
+                {% if user.is_superuser or perms.mailingapp.view_mailing %}
+                    <li class="nav-item active">
+                        <a class="nav-link" href="{% url 'mailingapp:mailing_list' %}">Рассылки </a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="{% url 'mailingapp:attempt_list' %}">Отчет о рассылках</a>
+                    </li>
+                {% endif %}
+
+                {% if user.is_superuser or perms.usersapp.view_user %}
+                    <li class="nav-item active">
+                        <a class="nav-link" href="{% url 'usersapp:user_list' %}">Пользователи </a>
+                    </li>
+                {% endif %}
+
+                {% if user.is_superuser or perms.mailingapp.view_message %}
+                    <li class="nav-item active">
+                        <a class="nav-link" href="{% url 'mailingapp:message_list' %}">Сообщения </a>
+                    </li>
+                {% endif %}
+                {% if user.is_superuser or perms.mailingapp.view_client %}
+                    <li class="nav-item active">
+                        <a class="nav-link" href="{% url 'mailingapp:client_list' %}">Клиенты </a>
+                    </li>
+                {% endif %}
+            {% endif %}
+
+            <li class="nav-item active">
+                <a class="nav-link" href="{% url 'usersapp:profile' %}">Профиль </a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="{% url 'usersapp:logout' %}">Выйти </a>
+            </li>
+
+        {% else %}
+
+            <li class="nav-item active">
+                <a class="nav-link" href="{% url 'usersapp:login' %}">Войти </a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="{% url 'usersapp:register' %}">Регистрация </a>
+            </li>
+
+        {% endif %}
+
+
+    </ul>
+</div>

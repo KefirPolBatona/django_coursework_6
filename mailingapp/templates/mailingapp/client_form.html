@@ -1,0 +1,48 @@
+{% extends 'mailingapp/base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<form class="row" method="post" enctype="multipart/form-data">
+    <div class="col-2">
+    </div>
+    <div class="col-4 mb-5">
+        <div class="container">
+            <div class="card" style="background-color: #a6a190">
+
+                <div class="card-header">
+                    <h4 class="card-title">
+                        {% if object %}
+                            Изменить сведения о клиенте
+                        {% else %}
+                            Создать нового клиента
+                        {% endif %}
+                    </h4>
+                </div>
+                <div class="card-body">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                        {% if object %}
+                            <button type="submit" class="btn btn-secondary">Сохранить изменения</button>
+                            <a href="{% url 'mailingapp:client_detail' object.pk %}" class="btn btn-secondary">Отмена</a>
+                        {% else %}
+                            <button type="submit" class="btn btn-secondary">Создать</button>
+                            <a href="{% url 'mailingapp:client_list' %}" class="btn btn-secondary">Отмена</a>
+                        {% endif %}
+                </div>
+            </div>
+            <br>
+        </div>
+    </div>
+</form>
+
+
+</main>
+
+<script src="{% static 'js/jquery-3.2.1.slim.min.js' %}"></script>
+
+</body>
+
+</html>
+{% endblock %}
